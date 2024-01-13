@@ -1,0 +1,11 @@
+class Solution:
+    def minSteps(self, s: str, t: str) -> int:
+        m = {}
+        for a in s:
+            m[a] = m.get(a, 0) + 1
+        for a in t:
+            m[a] = m.get(a, 0) - 1
+        ans = 0
+        for a in m.values():
+            ans += abs(a)
+        return ans // 2
