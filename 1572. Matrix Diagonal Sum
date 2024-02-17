@@ -1,0 +1,7 @@
+class Solution:
+    def diagonalSum(self, mat):
+        ans = 0
+        for i in range(len(mat)):            
+            ans += mat[i][i] + mat[i][~i]
+        if (len(mat) % 2): ans -= mat[int(i/2)][int(i/2)]
+        return ans
